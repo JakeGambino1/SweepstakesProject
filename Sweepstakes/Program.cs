@@ -25,11 +25,6 @@ namespace Sweepstakes
             sweepstakes.PrintContestantInfo(contestantWinner);
             Console.ReadLine();
 
-            Sweepstakes stackSweepstakes = new Sweepstakes("stack sweepstakes");
-            stackSweepstakes.contestantStack.Push(new Contestant());
-            stackSweepstakes.contestantStack.Push(new Contestant());
-            stackSweepstakes.contestantStack.Push(new Contestant());
-
         }
 
 
