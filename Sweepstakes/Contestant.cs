@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class Contestant
+    public class Contestant
     {
+        public string firstName;
+        public string lastName;
+        public int registrationNumber;
+        public Contestant(string firstName, string lastName, int registrationNumber)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.registrationNumber = registrationNumber;
+        }
     }
 }

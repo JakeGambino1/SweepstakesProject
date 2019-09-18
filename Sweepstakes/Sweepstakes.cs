@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class Sweepstakes
+    public class Sweepstakes
     {
+        public string sweepstakes;
+        public Dictionary<int, string> contestantDictionary;
+        public void RegisterContestant(Contestant contestant)
+        {
+            contestantDictionary.Add(contestant.registrationNumber, contestant.firstName + " " + contestant.lastName);
+        }
+        public Contestant PickWinner()
+        {
+            
+        }
+        public void PrintContestantInfo(Contestant contestant)
+        {
+
+        }
+
     }
 }
