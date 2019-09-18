@@ -10,11 +10,13 @@ namespace Sweepstakes
     {
         public string firstName;
         public string lastName;
+        public string email;
         public int registrationNumber;
         public Contestant()
         {
             firstName = UI.GetUserStringInput("Enter your first name");
             lastName = UI.GetUserStringInput("Enter your last name");
+            email = UI.GetUserStringInput("Enter your email address");
         }
     }
 }

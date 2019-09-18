@@ -12,29 +12,35 @@ namespace Sweepstakes
         public string sweepstakes;
         public Dictionary<int, Contestant> contestantDictionary = new Dictionary<int, Contestant>();
 
-        public Sweepstakes()
+        public Sweepstakes(string sweepstakes)
         {
-            
-        }
-        public void RegisterContestant()
-        {
-            Contestant newContestant = new Contestant();
-            CurrentNumberOfContestants++;
-            newContestant.registrationNumber = CurrentNumberOfContestants;
-            contestantDictionary.Add(CurrentNumberOfContestants, newContestant);
+            this.sweepstakes = sweepstakes;
         }
         public void RegisterContestant(Contestant contestant)
         {
-
+            CurrentNumberOfContestants++;
+            contestant.registrationNumber = CurrentNumberOfContestants;
+            contestantDictionary.Add(CurrentNumberOfContestants, contestant);
         }
-        //public Contestant PickWinner()
-        //{
-        //    Console.WriteLine(contestantDictionary.Keys);
+        public Contestant PickWinner()
+        {
+            Random random = new Random();
+            int winningNumber; 
+            winningNumber = random.Next(1, CurrentNumberOfContestants + 1);
 
-        //}
+            foreach (KeyValuePair<int, Contestant> pair in contestantDictionary)
+            {
+                if (winningNumber == pair.Key)
+                {
+                    Console.WriteLine($"The winner is {pair.Value}");
+                    return pair.Value;
+                }
+            }
+            return null;
+        }
         public void PrintContestantInfo(Contestant contestant)
         {
-            Console.WriteLine($"The winner is contestant number {contestant.registrationNumber}:\n{contestant.firstName} {contestant.lastName}!");
+            Console.WriteLine($"Contestant Number: {contestant.registrationNumber}\nName:\n{contestant.firstName} {contestant.lastName}!");
         }
         public void PrintAllContestantInfo()
         {
