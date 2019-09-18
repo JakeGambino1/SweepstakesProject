@@ -11,11 +11,10 @@ namespace Sweepstakes
         public string firstName;
         public string lastName;
         public int registrationNumber;
-        public Contestant(string firstName, string lastName, int registrationNumber)
+        public Contestant()
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.registrationNumber = registrationNumber;
+            firstName = UI.GetUserStringInput("Enter your first name");
+            lastName = UI.GetUserStringInput("Enter your last name");
         }
     }
 }

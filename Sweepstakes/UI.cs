@@ -22,10 +22,5 @@ namespace Sweepstakes
             userNumberInput = Convert.ToInt32(Console.ReadLine());
             return userNumberInput;
         }
-        public static Contestant CreateNewContestant()
-        {
-            Contestant contestant = new Contestant(GetUserStringInput("Enter your first name"), GetUserStringInput("Enter your last name"), GetUserNumberInput("Enter your registration number"));
-            return contestant;
-        }
     }
 }
