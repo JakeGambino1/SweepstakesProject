@@ -40,7 +40,7 @@ namespace Sweepstakes
         }
         public void PrintContestantInfo(Contestant contestant)
         {
-            Console.WriteLine($"Contestant Number: {contestant.registrationNumber}\nName:\n{contestant.firstName} {contestant.lastName}!");
+            Console.WriteLine($"Contestant Number: {contestant.registrationNumber}\nName:\n{contestant.firstName} {contestant.lastName}! They can be reached at {contestant.email}.");
         }
         public void PrintAllContestantInfo()
         {
