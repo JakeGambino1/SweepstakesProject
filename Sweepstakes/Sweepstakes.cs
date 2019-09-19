@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    public class Sweepstakes
+    public class Sweepstakes : IContestants
     {
         public int CurrentNumberOfContestants = 0;
         public string sweepstakes;
@@ -32,7 +32,7 @@ namespace Sweepstakes
             {
                 if (winningNumber == pair.Key)
                 {
-                    Console.WriteLine($"The winner is {pair.Value}");
+                    Console.WriteLine($"The winner is {pair.Value.firstName} {pair.Value.lastName} at {pair.Value.email}.");
                     return pair.Value;
                 }
             }
@@ -42,7 +42,7 @@ namespace Sweepstakes
         {
             Console.WriteLine($"Contestant Number: {contestant.registrationNumber}\nName:\n{contestant.firstName} {contestant.lastName}! They can be reached at {contestant.email}.");
         }
-        public void PrintAllContestantInfo()
+        public void PrintAllContestantInfo(Dictionary<int, Contestant> contestantDictionary)
         {
             foreach (KeyValuePair<int, Contestant> pair in contestantDictionary)
             {
@@ -50,5 +50,10 @@ namespace Sweepstakes
             }
         }
 
+        public void NotifyContestants(Sweepstakes sweepstakes)
+        {
+            PrintAllContestantInfo(sweepstakes.contestantDictionary);
+            PrintContestantInfo(PickWinner());
+        }
     }
 }

@@ -11,22 +11,19 @@ namespace Sweepstakes
         static void Main(string[] args)
         {
             Sweepstakes sweepstakes = new Sweepstakes("dictionary sweepstakes");
-            Contestant contestantWinner;
+            //Contestant contestantWinner;
 
             sweepstakes.RegisterContestant(new Contestant());
             sweepstakes.RegisterContestant(new Contestant());
             sweepstakes.RegisterContestant(new Contestant());
             sweepstakes.RegisterContestant(new Contestant());
 
-            //Contestant winner = sweepstakes.PickWinner();
-            //sweepstakes.PrintContestantInfo(winner);
-            sweepstakes.PrintAllContestantInfo();
-            contestantWinner = sweepstakes.PickWinner();
-            sweepstakes.PrintContestantInfo(contestantWinner);
+            //contestantWinner = sweepstakes.PickWinner();
+            //sweepstakes.PrintContestantInfo(contestantWinner);
+            sweepstakes.NotifyContestants(sweepstakes);
             Console.ReadLine();
 
+
         }
-
-
     }
 }
